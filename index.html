@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Booth Messenger - 公式アプリ配布サイト</title>
+  <title id="pageTitle">Booth Messenger - 公式アプリ配布サイト</title>
   <meta name="description" content="軍用グレードの暗号化を備えた次世代P2Pメッセンジャー「Booth Messenger」の公式配布ページです。最新版Android APKを直接ダウンロードできます。">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -32,18 +32,66 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 24px 16px 48px;
+      padding: 16px 16px 48px;
     }
 
     .container {
-      max-width: 560px;
+      max-width: 580px;
       width: 100%;
+    }
+
+    /* 上部バー（言語セレクター） */
+    .top-bar {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 12px;
+    }
+
+    .lang-selector-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(99, 102, 241, 0.4);
+      padding: 6px 12px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .lang-selector-box i {
+      color: #818cf8;
+      font-size: 14px;
+    }
+
+    .lang-select {
+      background: transparent;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding-right: 4px;
+    }
+
+    .lang-select option {
+      background: #0f172a;
+      color: #fff;
+      font-weight: 600;
+      padding: 8px 12px;
+    }
+
+    .lang-select option:checked {
+      background: #4f46e5;
+      color: #fff;
     }
 
     .header {
       text-align: center;
-      margin-top: 32px;
-      margin-bottom: 32px;
+      margin-top: 16px;
+      margin-bottom: 28px;
     }
 
     .app-icon {
@@ -260,18 +308,32 @@
 <body>
 
   <div class="container">
+    <!-- 言語切り替えバー -->
+    <div class="top-bar">
+      <div class="lang-selector-box">
+        <i class="fa-solid fa-globe"></i>
+        <select class="lang-select" id="langSelector" aria-label="Language Selector">
+          <option value="en">English</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="pt">Português</option>
+          <option value="th">ภาษาไทย</option>
+        </select>
+      </div>
+    </div>
+
     <header class="header">
       <div class="app-icon">
         <i class="fa-solid fa-shield-halved"></i>
       </div>
       <h1>Booth Messenger</h1>
-      <p class="tagline">完全軍用グレード暗号化 &amp; P2Pプライベートメッセンジャー</p>
+      <p class="tagline" data-i18n="tagline">完全軍用グレード暗号化 &amp; P2Pプライベートメッセンジャー</p>
     </header>
 
     <div class="card">
       <div class="version-meta">
         <div>
-          <span class="badge"><i class="fa-brands fa-android"></i> Android版</span>
+          <span class="badge"><i class="fa-brands fa-android"></i> <span data-i18n="badge_android">Android版</span></span>
         </div>
         <div style="text-align: right;">
           <div style="font-weight: 700; font-size: 14px;">v1.000 (Build 140)</div>
@@ -281,85 +343,321 @@
 
       <a href="https://github.com/yoshi7930/booth-messenger-release/releases/download/v140/booth-messenger-release-v140-com.booth.messenger.apk" class="download-btn">
         <i class="fa-solid fa-cloud-arrow-down"></i>
-        <span>最新APKをダウンロード</span>
+        <span data-i18n="download_btn">最新APKをダウンロード</span>
       </a>
-      <p class="download-subtext">約 75 MB • Android 8.0 以上対応 • 直接インストール可能</p>
+      <p class="download-subtext" data-i18n="download_sub">約 75 MB • Android 8.0 以上対応 • 直接インストール可能</p>
     </div>
 
+    <!-- 最新アップデート内容 -->
     <div class="card">
-      <h2 class="section-title"><i class="fa-solid fa-sparkles" style="color: #f59e0b;"></i> 最新アップデート内容 (v1.000)</h2>
+      <h2 class="section-title"><i class="fa-solid fa-sparkles" style="color: #f59e0b;"></i> <span data-i18n="changelog_title">最新アップデート内容 (v1.000)</span></h2>
       <ul class="changelog-list">
         <li class="changelog-item">
           <i class="fa-solid fa-circle-check"></i>
-          <div><strong>画面レイアウト最適化:</strong> 端末のナビゲーションバー（3ボタン/ジェスチャー）と文字入力欄の被りを自動判別して最適化</div>
+          <div><strong data-i18n="cl_item1_title">画面レイアウト最適化:</strong> <span data-i18n="cl_item1_desc">端末のナビゲーションバー（3ボタン/ジェスチャー）と文字入力欄の被りを自動判別して最適化</span></div>
         </li>
         <li class="changelog-item">
           <i class="fa-solid fa-circle-check"></i>
-          <div><strong>UI・視認性向上:</strong> 送信確認ダイアログ等の背景を統一し、テキストやボタンの視認性を向上</div>
+          <div><strong data-i18n="cl_item2_title">UI・視認性向上:</strong> <span data-i18n="cl_item2_desc">送信確認ダイアログ等の背景を統一し、テキストやボタンの視認性を向上</span></div>
         </li>
         <li class="changelog-item">
           <i class="fa-solid fa-circle-check"></i>
-          <div><strong>アカウント削除連携:</strong> Google Playポリシー準拠の申請専用Webページ提供およびアプリ内連携に対応</div>
+          <div><strong data-i18n="cl_item3_title">アカウント削除連携:</strong> <span data-i18n="cl_item3_desc">Google Playポリシー準拠の申請専用Webページ提供およびアプリ内連携に対応</span></div>
         </li>
         <li class="changelog-item">
           <i class="fa-solid fa-circle-check"></i>
-          <div><strong>操作性改善:</strong> メッセージ送信後に入力欄クリアと連動して最下部へ自動スクロール</div>
+          <div><strong data-i18n="cl_item4_title">操作性改善:</strong> <span data-i18n="cl_item4_desc">メッセージ送信後に入力欄クリアと連動して最下部へ自動スクロール</span></div>
         </li>
         <li class="changelog-item">
           <i class="fa-solid fa-circle-check"></i>
-          <div><strong>高速ゼロDB着信:</strong> 着信処理の完全ゼロDB化により、通話着信が0ミリ秒で即座にポップアップ起動</div>
+          <div><strong data-i18n="cl_item5_title">高速ゼロDB着信:</strong> <span data-i18n="cl_item5_desc">着信処理の完全ゼロDB化により、通話着信が0ミリ秒で即座にポップアップ起動</span></div>
         </li>
         <li class="changelog-item">
           <i class="fa-solid fa-circle-check"></i>
-          <div><strong>送受信ラグ解消:</strong> 事前認証ウォームアップおよび通知処理の最適化でメッセージ遅延を解消</div>
+          <div><strong data-i18n="cl_item6_title">送受信ラグ解消:</strong> <span data-i18n="cl_item6_desc">事前認証ウォームアップおよび通知処理の最適化でメッセージ遅延を解消</span></div>
         </li>
         <li class="changelog-item">
           <i class="fa-solid fa-circle-check"></i>
-          <div><strong>利便性向上:</strong> トークルームでのファイル添付・閲覧時等の暗証番号（PIN）ロックをスキップ</div>
+          <div><strong data-i18n="cl_item7_title">利便性向上:</strong> <span data-i18n="cl_item7_desc">トークルームでのファイル添付・閲覧時等の暗証番号（PIN）ロックをスキップ</span></div>
         </li>
       </ul>
     </div>
 
+    <!-- インストール手順 -->
     <div class="card">
-      <h2 class="section-title"><i class="fa-solid fa-circle-info" style="color: #6366f1;"></i> インストール手順</h2>
+      <h2 class="section-title"><i class="fa-solid fa-circle-info" style="color: #6366f1;"></i> <span data-i18n="install_title">インストール手順</span></h2>
       <div class="steps">
-        <div class="step-item">上の「最新APKをダウンロード」をタップしてファイルをダウンロードします。</div>
-        <div class="step-item">ダウンロード完了後、通知または「ファイル」アプリから APK を開きます。</div>
-        <div class="step-item">「提供元不明のアプリ」警告が出た場合は、「設定」から「この提供元のアプリを許可」を有効にします。</div>
-        <div class="step-item">「インストール」をタップし、完了したら「開く」で利用開始できます。</div>
+        <div class="step-item" data-i18n="step1">上の「最新APKをダウンロード」をタップしてファイルをダウンロードします。</div>
+        <div class="step-item" data-i18n="step2">ダウンロード完了後、通知または「ファイル」アプリから APK を開きます。</div>
+        <div class="step-item" data-i18n="step3">「提供元不明のアプリ」警告が出た場合は、「設定」から「この提供元のアプリを許可」を有効にします。</div>
+        <div class="step-item" data-i18n="step4">「インストール」をタップし、完了したら「開く」で利用開始できます。</div>
       </div>
     </div>
 
+    <!-- 主な特徴 -->
     <div class="card">
       <ul class="feature-list">
         <li class="feature-item">
           <div class="feature-icon"><i class="fa-solid fa-lock"></i></div>
           <div>
-            <div class="feature-title">E2EE 完全暗号化</div>
-            <div class="feature-desc">全メッセージ・通話信号は端末間暗号化され、傍受は不可能です。</div>
+            <div class="feature-title" data-i18n="feat1_title">E2EE 完全暗号化</div>
+            <div class="feature-desc" data-i18n="feat1_desc">全メッセージ・通話信号は端末間暗号化され、傍受は不可能です。</div>
           </div>
         </li>
         <li class="feature-item">
           <div class="feature-icon"><i class="fa-solid fa-database"></i></div>
           <div>
-            <div class="feature-title">SQLCipher ローカルDB保護</div>
-            <div class="feature-desc">端末内データもハードウェア暗号化され、紛失時も安心です。</div>
+            <div class="feature-title" data-i18n="feat2_title">SQLCipher ローカルDB保護</div>
+            <div class="feature-desc" data-i18n="feat2_desc">端末内データもハードウェア暗号化され、紛失時も安心です。</div>
           </div>
         </li>
         <li class="feature-item">
           <div class="feature-icon"><i class="fa-solid fa-phone-volume"></i></div>
           <div>
-            <div class="feature-title">低遅延 P2P 通話</div>
-            <div class="feature-desc">WebRTC による高音質・低遅延の直接音声＆ビデオ通話に対応。</div>
+            <div class="feature-title" data-i18n="feat3_title">低遅延 P2P 通話</div>
+            <div class="feature-desc" data-i18n="feat3_desc">WebRTC による高音質・低遅延の直接音声＆ビデオ通話に対応。</div>
           </div>
         </li>
       </ul>
     </div>
 
     <footer>
-      <p>&copy; 2026 Booth Messenger. All rights reserved.</p>
+      <p data-i18n="copyright">&copy; 2026 Booth Messenger. All rights reserved.</p>
     </footer>
   </div>
+
+  <script>
+    const TRANSLATIONS = {
+      ja: {
+        page_title: "Booth Messenger - 公式アプリ配布サイト",
+        tagline: "完全軍用グレード暗号化 & P2Pプライベートメッセンジャー",
+        badge_android: "Android版",
+        download_btn: "最新APKをダウンロード",
+        download_sub: "約 75 MB • Android 8.0 以上対応 • 直接インストール可能",
+        changelog_title: "最新アップデート内容 (v1.000)",
+        cl_item1_title: "画面レイアウト最適化:",
+        cl_item1_desc: "端末のナビゲーションバー（3ボタン/ジェスチャー）と文字入力欄の被りを自動判別して最適化",
+        cl_item2_title: "UI・視認性向上:",
+        cl_item2_desc: "送信確認ダイアログ等の背景を統一し、テキストやボタンの視認性を向上",
+        cl_item3_title: "アカウント削除連携:",
+        cl_item3_desc: "Google Playポリシー準拠の申請専用Webページ提供およびアプリ内連携に対応",
+        cl_item4_title: "操作性改善:",
+        cl_item4_desc: "メッセージ送信後に入力欄クリアと連動して最下部へ自動スクロール",
+        cl_item5_title: "高速ゼロDB着信:",
+        cl_item5_desc: "着信処理の完全ゼロDB化により、通話着信が0ミリ秒で即座にポップアップ起動",
+        cl_item6_title: "送受信ラグ解消:",
+        cl_item6_desc: "事前認証ウォームアップおよび通知処理の最適化でメッセージ遅延を解消",
+        cl_item7_title: "利便性向上:",
+        cl_item7_desc: "トークルームでのファイル添付・閲覧時等の暗証番号（PIN）ロックをスキップ",
+        install_title: "インストール手順",
+        step1: "上の「最新APKをダウンロード」をタップしてファイルをダウンロードします。",
+        step2: "ダウンロード完了後、通知または「ファイル」アプリから APK を開きます。",
+        step3: "「提供元不明のアプリ」警告が出た場合は、「設定」から「この提供元のアプリを許可」を有効にします。",
+        step4: "「インストール」をタップし、完了したら「開く」で利用開始できます。",
+        feat1_title: "E2EE 完全暗号化",
+        feat1_desc: "全メッセージ・通話信号は端末間暗号化され、傍受は不可能です。",
+        feat2_title: "SQLCipher ローカルDB保護",
+        feat2_desc: "端末内データもハードウェア暗号化され、紛失時も安心です。",
+        feat3_title: "低遅延 P2P 通話",
+        feat3_desc: "WebRTC による高音質・低遅延の直接音声＆ビデオ通話に対応。",
+        copyright: "© 2026 Booth Messenger. All rights reserved."
+      },
+      en: {
+        page_title: "Booth Messenger - Official App Distribution",
+        tagline: "Military-Grade Encryption & P2P Private Messenger",
+        badge_android: "Android",
+        download_btn: "Download Latest APK",
+        download_sub: "Approx. 75 MB • Android 8.0+ • Direct Installation",
+        changelog_title: "Latest Updates (v1.000)",
+        cl_item1_title: "Screen Layout Optimization:",
+        cl_item1_desc: "Auto-detects and optimizes overlap between navigation bars (3-button / gestures) and text input fields",
+        cl_item2_title: "UI & Visibility Improvements:",
+        cl_item2_desc: "Unified dialog backgrounds for file/image confirmations to significantly enhance text and button visibility",
+        cl_item3_title: "Account Deletion Portal:",
+        cl_item3_desc: "Google Play policy compliant dedicated account deletion portal and seamless in-app integration",
+        cl_item4_title: "Usability Enhancements:",
+        cl_item4_desc: "Auto-scrolls directly to the latest message upon clearing the input field after sending",
+        cl_item5_title: "Ultra-Fast Zero-DB Incoming Calls:",
+        cl_item5_desc: "Zero database overhead on incoming call events enables popup screens to launch instantly in 0ms",
+        cl_item6_title: "Message Latency Eliminated:",
+        cl_item6_desc: "Pre-authentication warm-up and notification optimization eliminate send/receive lag",
+        cl_item7_title: "Convenience Upgrades:",
+        cl_item7_desc: "Smart PIN-lock bypass when attaching/viewing files in chat rooms or sharing invite links",
+        install_title: "Installation Guide",
+        step1: "Tap 'Download Latest APK' above to download the installation package.",
+        step2: "Once downloaded, open the APK file from your notification bar or Files app.",
+        step3: "If prompted with 'Install unknown apps', tap 'Settings' and enable 'Allow from this source'.",
+        step4: "Tap 'Install', and once completed, tap 'Open' to launch Booth Messenger.",
+        feat1_title: "Military-Grade E2EE",
+        feat1_desc: "End-to-end encrypted messages and call signaling ensure complete privacy against interception.",
+        feat2_title: "SQLCipher Local Storage",
+        feat2_desc: "Hardware-derived key encryption keeps on-device databases safe even if the phone is lost.",
+        feat3_title: "Low-Latency P2P Calls",
+        feat3_desc: "High-definition direct peer-to-peer voice and video calls powered by WebRTC.",
+        copyright: "© 2026 Booth Messenger. All rights reserved."
+      },
+      ko: {
+        page_title: "Booth Messenger - 공식 앱 배포 사이트",
+        tagline: "완전 군사 등급 암호화 & P2P 프라이빗 메신저",
+        badge_android: "Android 버전",
+        download_btn: "최신 APK 다운로드",
+        download_sub: "약 75 MB • Android 8.0 이상 지원 • 직접 설치 가능",
+        changelog_title: "최신 업데이트 내역 (v1.000)",
+        cl_item1_title: "화면 레이아웃 최적화:",
+        cl_item1_desc: "기기의 내비게이션 바(3버튼/제스처)와 텍스트 입력창 간의 겹침을 자동 감지하여 최적화",
+        cl_item2_title: "UI 및 시인성 개선:",
+        cl_item2_desc: "파일 전송 확인 대화상자 등의 배경을 통일하여 텍스트 및 버튼의 시인성을 대폭 향상",
+        cl_item3_title: "계정 삭제 신청 연동:",
+        cl_item3_desc: "Google Play 정책을 준수하는 전용 계정 삭제 웹페이지 제공 및 앱 내 연동 지원",
+        cl_item4_title: "사용성 개선:",
+        cl_item4_desc: "메시지 전송 후 입력창 초기화와 연동하여 최신 메시지로 즉시 자동 스크롤",
+        cl_item5_title: "제로 DB 초고속 수신:",
+        cl_item5_desc: "수신 처리의 완전 제로 DB화로 0밀리초 만에 통화 수신 화면이 즉시 팝업",
+        cl_item6_title: "메시지 지연 해소:",
+        cl_item6_desc: "사전 인증 웜업 및 알림 최적화로 메시지 송수신 시 지연 시간을 완전히 해소",
+        cl_item7_title: "편의성 향상:",
+        cl_item7_desc: "채팅방 내 파일 첨부 및 열람, 초대 공유 시 비밀번호(PIN) 잠금을 스마트하게 건너뜀",
+        install_title: "설치 안내",
+        step1: "상단의 '최신 APK 다운로드'를 눌러 설치 파일을 다운로드합니다.",
+        step2: "다운로드가 완료되면 알림창 또는 '파일' 앱에서 APK를 엽니다.",
+        step3: "'출처를 알 수 없는 앱 설치' 경고가 표시되면 '설정'에서 '이 출처의 앱 허용'을 켭니다.",
+        step4: "'설치'를 누르고 완료되면 '열기'를 눌러 앱을 시작합니다.",
+        feat1_title: "E2EE 완전 종단간 암호화",
+        feat1_desc: "모든 메시지와 통화 신호는 단말기 간 종단간 암호화되어 도청이 불가능합니다.",
+        feat2_title: "SQLCipher 로컬 DB 보호",
+        feat2_desc: "기기 내 데이터도 하드웨어 기반 암호화로 보호되어 분실 시에도 안전합니다.",
+        feat3_title: "초저지연 P2P 통화",
+        feat3_desc: "WebRTC 기반의 고음질 직접 피어투피어 음성 및 화상 통화를 지원합니다.",
+        copyright: "© 2026 Booth Messenger. All rights reserved."
+      },
+      pt: {
+        page_title: "Booth Messenger - Site Oficial de Distribuição",
+        tagline: "Criptografia de Nível Militar & Mensageiro Privado P2P",
+        badge_android: "Versão Android",
+        download_btn: "Baixar APK Mais Recente",
+        download_sub: "Aprox. 75 MB • Requer Android 8.0+ • Instalação Direta",
+        changelog_title: "Novidades da Atualização (v1.000)",
+        cl_item1_title: "Otimização de Layout de Tela:",
+        cl_item1_desc: "Detecta e otimiza automaticamente a sobreposição entre a barra de navegação (3 botões/gestos) e o campo de texto",
+        cl_item2_title: "Melhorias de UI e Visibilidade:",
+        cl_item2_desc: "Fundos de diálogo padronizados para envio de arquivos/imagens, melhorando muito a legibilidade de textos e botões",
+        cl_item3_title: "Portal de Exclusão de Conta:",
+        cl_item3_desc: "Portal web dedicado para solicitação de exclusão de conta em conformidade com as políticas do Google Play",
+        cl_item4_title: "Melhorias de Usabilidade:",
+        cl_item4_desc: "Rolagem automática para a mensagem mais recente ao limpar o campo de entrada após o envio",
+        cl_item5_title: "Chamadas Ultrarrápidas Zero-DB:",
+        cl_item5_desc: "Processamento de chamadas recebidas sem sobrecarga no banco de dados local para pop-ups instantâneos em 0ms",
+        cl_item6_title: "Eliminação de Latência:",
+        cl_item6_desc: "Pré-autenticação em segundo plano e notificações otimizadas para eliminar atrasos nas mensagens",
+        cl_item7_title: "Maior Comodidade:",
+        cl_item7_desc: "Ignora o bloqueio por PIN ao anexar/visualizar arquivos no chat ou compartilhar links de convite",
+        install_title: "Guia de Instalação",
+        step1: "Toque em 'Baixar APK Mais Recente' acima para baixar o arquivo de instalação.",
+        step2: "Após o download, abra o arquivo APK pela barra de notificações ou pelo gerenciador de arquivos.",
+        step3: "Se aparecer o aviso 'Instalar apps desconhecidos', toque em 'Configurações' e ative 'Permitir desta fonte'.",
+        step4: "Toque em 'Instalar' e, ao concluir, toque em 'Abrir' para começar a usar o Booth Messenger.",
+        feat1_title: "Criptografia E2EE Total",
+        feat1_desc: "Mensagens e sinais de chamadas criptografados de ponta a ponta, sem possibilidade de interceptação.",
+        feat2_title: "Banco de Dados SQLCipher",
+        feat2_desc: "Proteção com chave de hardware no dispositivo, garantindo total segurança contra invasões.",
+        feat3_title: "Chamadas P2P de Baixa Latência",
+        feat3_desc: "Chamadas de áudio e vídeo de alta qualidade via WebRTC direto entre dispositivos.",
+        copyright: "© 2026 Booth Messenger. All rights reserved."
+      },
+      th: {
+        page_title: "Booth Messenger - เว็บไซต์ดาวน์โหลดอย่างเป็นทางการ",
+        tagline: "การเข้ารหัสระดับกองทัพ & เมสเซนเจอร์ส่วนตัว P2P",
+        badge_android: "เวอร์ชัน Android",
+        download_btn: "ดาวน์โหลด APK ล่าสุด",
+        download_sub: "ประมาณ 75 MB • รองรับ Android 8.0 ขึ้นไป • ติดตั้งได้โดยตรง",
+        changelog_title: "รายละเอียดการอัปเดตล่าสุด (v1.000)",
+        cl_item1_title: "ปรับแต่งเลย์เอาต์หน้าจอ:",
+        cl_item1_desc: "ตรวจจับและปรับพื้นที่ทับซ้อนระหว่างแถบนำทาง (3 ปุ่ม/ท่าทาง) และช่องพิมพ์ข้อความโดยอัตโนมัติ",
+        cl_item2_title: "ปรับปรุง UI และการมองเห็น:",
+        cl_item2_desc: "ปรับพื้นหลังกล่องยืนยันการส่งไฟล์และรูปภาพให้ชัดเจน ช่วยให้อ่านข้อความและปุ่มได้ง่ายยิ่งขึ้น",
+        cl_item3_title: "ระบบขอลบบัญชีผู้ใช้:",
+        cl_item3_desc: "รองรับหน้าเว็บสำหรับขอลบบัญชีผู้ใช้ตามนโยบาย Google Play พร้อมเชื่อมโยงภายในแอป",
+        cl_item4_title: "ปรับปรุงความสะดวกในการใช้งาน:",
+        cl_item4_desc: "เลื่อนหน้าจอลงไปยังข้อความล่าสุดทันทีเมื่อส่งข้อความและล้างช่องพิมพ์",
+        cl_item5_title: "สายเรียกเข้าด่วนพิเศษ Zero-DB:",
+        cl_item5_desc: "ประมวลผลสายเรียกเข้าโดยไม่ต้องเปิดฐานข้อมูลในเครื่อง ช่วยให้หน้าจอสายเข้าเด้งขึ้นทันทีใน 0ms",
+        cl_item6_title: "ลดความล่าช้าในการส่งข้อความ:",
+        cl_item6_desc: "เพิ่มประสิทธิภาพการตรวจสอบสิทธิ์ล่วงหน้าและการแจ้งเตือน เพื่อขจัดปัญหาความล่าช้า",
+        cl_item7_title: "เพิ่มความคล่องตัว:",
+        cl_item7_desc: "ข้ามการล็อกรหัส PIN ชั่วคราวขณะแนบ/เปิดไฟล์ในห้องแชทหรือแชร์ลิงก์เชิญ",
+        install_title: "ขั้นตอนการติดตั้ง",
+        step1: "แตะที่ปุ่ม 'ดาวน์โหลด APK ล่าสุด' ด้านบนเพื่อดาวน์โหลดไฟล์",
+        step2: "เมื่อดาวน์โหลดเสร็จแล้ว ให้เปิดไฟล์ APK จากแถบการแจ้งเตือนหรือแอปจัดการไฟล์",
+        step3: "หากมีข้อความเตือนเรื่อง 'แหล่งที่ไม่รู้จัก' ให้แตะ 'การตั้งค่า' และเปิด 'อนุญาตจากแหล่งนี้'",
+        step4: "แตะ 'ติดตั้ง' และเมื่อเสร็จสิ้น ให้แตะ 'เปิด' เพื่อเริ่มใช้งานแอปได้ทันที",
+        feat1_title: "การเข้ารหัส E2EE สมบูรณ์แบบ",
+        feat1_desc: "ข้อความและสัญญาณสายเรียกเข้าทั้งหมดถูกเข้ารหัสระหว่างอุปกรณ์ ทำให้ไม่สามารถดักฟังได้",
+        feat2_title: "ความปลอดภัย SQLCipher ในเครื่อง",
+        feat2_desc: "ฐานข้อมูลในเครื่องได้รับการปกป้องด้วยคีย์ฮาร์ดแวร์ ปลอดภัยแม้โทรศัพท์สูญหาย",
+        feat3_title: "โทรเสียงและวิดีโอ P2P ดีเลย์ต่ำ",
+        feat3_desc: "การสนทนาทางเสียงและวิดีโอคุณภาพสูงแบบ Peer-to-Peer โดยตรงด้วย WebRTC",
+        copyright: "© 2026 Booth Messenger. All rights reserved."
+      }
+    };
+
+    const STORAGE_KEY = "booth_release_lang";
+    const SUPPORTED = ["en", "ja", "ko", "pt", "th"];
+
+    function getPreferredLanguage() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const urlLang = urlParams.get("lang");
+      if (urlLang && SUPPORTED.includes(urlLang.toLowerCase())) {
+        return urlLang.toLowerCase();
+      }
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved && SUPPORTED.includes(saved)) {
+        return saved;
+      }
+      const nav = (navigator.language || "").toLowerCase();
+      if (nav.startsWith("ja")) return "ja";
+      if (nav.startsWith("ko")) return "ko";
+      if (nav.startsWith("pt")) return "pt";
+      if (nav.startsWith("th")) return "th";
+      if (nav.startsWith("en")) return "en";
+      return "en"; // 海外アクセス時は英語をデフォルト
+    }
+
+    function applyLanguage(lang) {
+      if (!SUPPORTED.includes(lang)) lang = "ja";
+      localStorage.setItem(STORAGE_KEY, lang);
+      document.documentElement.lang = lang;
+
+      const dict = TRANSLATIONS[lang] || TRANSLATIONS.ja;
+
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (dict[key]) {
+          el.textContent = dict[key];
+        }
+      });
+
+      if (dict.page_title) {
+        document.title = dict.page_title;
+      }
+
+      const selector = document.getElementById("langSelector");
+      if (selector) {
+        selector.value = lang;
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const currentLang = getPreferredLanguage();
+      applyLanguage(currentLang);
+
+      const selector = document.getElementById("langSelector");
+      if (selector) {
+        selector.addEventListener("change", (e) => {
+          applyLanguage(e.target.value);
+        });
+      }
+    });
+  </script>
 
 </body>
 </html>

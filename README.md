@@ -1,5 +1,10 @@
 # Booth Messenger (公式配布リポジトリ)
 
+> 🌐 **Language / 言語:**  
+> **[ 日本語 ](README.md)** | **[ English ](README.en.md)** | **[ 한국어 ](README.ko.md)** | **[ Português ](README.pt.md)** | **[ ภาษาไทย ](README.th.md)**
+
+---
+
 ![Android](https://img.shields.io/badge/Platform-Android-green.svg)
 ![Version](https://img.shields.io/badge/Version-v1.000%20(Build%20140)-blue.svg)
 ![License](https://img.shields.io/badge/License-Proprietary-orange.svg)
