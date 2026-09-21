@@ -252,6 +252,40 @@
       flex-shrink: 0;
     }
 
+    .notice-card {
+      background: rgba(245, 158, 11, 0.1);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      border-radius: 16px;
+      padding: 16px;
+      margin-top: 18px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      text-align: left;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .notice-icon {
+      font-size: 20px;
+      color: #f59e0b;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .notice-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fcd34d;
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    .notice-desc {
+      font-size: 12px;
+      color: #fef3c7;
+      line-height: 1.5;
+    }
+
     .feature-title {
       font-size: 15px;
       font-weight: 600;
@@ -346,6 +380,15 @@
         <span data-i18n="download_btn">最新APKをダウンロード</span>
       </a>
       <p class="download-subtext" data-i18n="download_sub">約 75 MB • Android 8.0 以上対応 • 直接インストール可能</p>
+
+      <!-- PINコード解除通知に関する重要なお知らせカード -->
+      <div class="notice-card">
+        <span class="notice-icon">🔔</span>
+        <div>
+          <strong class="notice-title" data-i18n="pin_notice_title">【重要】インストール・更新後の通知設定について</strong>
+          <div class="notice-desc" data-i18n-html="pin_notice_desc">アプリの新規インストール時およびアップデート後は、端末セキュリティの仕様上、<strong>一度アプリを起動して暗証番号（PINコード）を解除</strong>することで初めてバックグラウンドのリアルタイム着信・プッシュ通知が有効になります。</div>
+        </div>
+      </div>
     </div>
 
     <!-- 最新アップデート内容 -->
@@ -434,6 +477,8 @@
         badge_android: "Android版",
         download_btn: "最新APKをダウンロード",
         download_sub: "約 75 MB • Android 8.0 以上対応 • 直接インストール可能",
+        pin_notice_title: "【重要】インストール・更新後の通知設定について",
+        pin_notice_desc: "アプリの新規インストール時およびアップデート後は、端末セキュリティの仕様上、<strong>一度アプリを起動して暗証番号（PINコード）を解除</strong>することで初めてバックグラウンドのリアルタイム着信・プッシュ通知が有効になります。",
         changelog_title: "最新アップデート内容 (v1.000)",
         cl_item1_title: "画面レイアウト最適化:",
         cl_item1_desc: "端末のナビゲーションバー（3ボタン/ジェスチャー）と文字入力欄の被りを自動判別して最適化",
@@ -468,6 +513,8 @@
         badge_android: "Android",
         download_btn: "Download Latest APK",
         download_sub: "Approx. 75 MB • Android 8.0+ • Direct Installation",
+        pin_notice_title: "Important: Activating Real-Time Notifications",
+        pin_notice_desc: "After a fresh install or update, due to device security policies, please <strong>launch the app and unlock your PIN code once</strong> to activate real-time calls and push notifications.",
         changelog_title: "Latest Updates (v1.000)",
         cl_item1_title: "Screen Layout Optimization:",
         cl_item1_desc: "Auto-detects and optimizes overlap between navigation bars (3-button / gestures) and text input fields",
@@ -502,6 +549,8 @@
         badge_android: "Android 버전",
         download_btn: "최신 APK 다운로드",
         download_sub: "약 75 MB • Android 8.0 이상 지원 • 직접 설치 가능",
+        pin_notice_title: "【중요】 설치 및 업데이트 후 알림 활성화 안내",
+        pin_notice_desc: "신규 설치 및 앱 업데이트 후에는, 기기 보안 정책에 따라 <strong>앱을 실행하여 PIN 코드(비밀번호)를 한 번 잠금 해제</strong>해야 백그라운드 실시간 통화 및 푸시 알림이 정상적으로 활성화됩니다.",
         changelog_title: "최신 업데이트 내역 (v1.000)",
         cl_item1_title: "화면 레이아웃 최적화:",
         cl_item1_desc: "기기의 내비게이션 바(3버튼/제스처)와 텍스트 입력창 간의 겹침을 자동 감지하여 최적화",
@@ -536,6 +585,8 @@
         badge_android: "Versão Android",
         download_btn: "Baixar APK Mais Recente",
         download_sub: "Aprox. 75 MB • Requer Android 8.0+ • Instalação Direta",
+        pin_notice_title: "Importante: Ativação das Notificações em Tempo Real",
+        pin_notice_desc: "Após uma nova instalação ou atualização, devido a políticas de segurança do dispositivo, <strong>abra o aplicativo e desbloqueie seu código PIN uma vez</strong> para ativar chamadas e notificações em tempo real.",
         changelog_title: "Novidades da Atualização (v1.000)",
         cl_item1_title: "Otimização de Layout de Tela:",
         cl_item1_desc: "Detecta e otimiza automaticamente a sobreposição entre a barra de navegação (3 botões/gestos) e o campo de texto",
@@ -570,6 +621,8 @@
         badge_android: "เวอร์ชัน Android",
         download_btn: "ดาวน์โหลด APK ล่าสุด",
         download_sub: "ประมาณ 75 MB • รองรับ Android 8.0 ขึ้นไป • ติดตั้งได้โดยตรง",
+        pin_notice_title: "【สำคัญ】การเปิดใช้งานการแจ้งเตือนแบบเรียลไทม์",
+        pin_notice_desc: "หลังจากการติดตั้งใหม่หรืออัปเดตแอป ตามนโยบายความปลอดภัยของอุปกรณ์ <strong>โปรดเปิดแอปและปลดล็อกรหัส PIN หนึ่งครั้ง</strong> เพื่อเปิดใช้งานสายเรียกเข้าและการแจ้งเตือนแบบเรียลไทม์อย่างสมบูรณ์",
         changelog_title: "รายละเอียดการอัปเดตล่าสุด (v1.000)",
         cl_item1_title: "ปรับแต่งเลย์เอาต์หน้าจอ:",
         cl_item1_desc: "ตรวจจับและปรับพื้นที่ทับซ้อนระหว่างแถบนำทาง (3 ปุ่ม/ท่าทาง) และช่องพิมพ์ข้อความโดยอัตโนมัติ",
@@ -633,6 +686,13 @@
         const key = el.getAttribute("data-i18n");
         if (dict[key]) {
           el.textContent = dict[key];
+        }
+      });
+
+      document.querySelectorAll("[data-i18n-html]").forEach(el => {
+        const key = el.getAttribute("data-i18n-html");
+        if (dict[key]) {
+          el.innerHTML = dict[key];
         }
       });
 
