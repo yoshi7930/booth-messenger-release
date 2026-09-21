@@ -1,7 +1,7 @@
 # Booth Messenger (公式配布リポジトリ)
 
 ![Android](https://img.shields.io/badge/Platform-Android-green.svg)
-![Version](https://img.shields.io/badge/Version-v0.9244%20(Build%20138)-blue.svg)
+![Version](https://img.shields.io/badge/Version-v1.000%20(Build%20140)-blue.svg)
 ![License](https://img.shields.io/badge/License-Proprietary-orange.svg)
 ![Encryption](https://img.shields.io/badge/Encryption-E2EE%20%2B%20SQLCipher-red.svg)
 
@@ -13,14 +13,29 @@ Booth Messenger の公式アプリ配布リポジトリです。最新版の And
 
 | 項目 | 詳細 |
 | :--- | :--- |
-| **最新バージョン** | **v0.9244 (Build 138)** |
+| **最新バージョン** | **v1.000 (Build 140)** |
 | **パッケージ名** | `com.booth.messenger` |
 | **対応OS** | Android 8.0 (API 26) 以上 |
+| **ファイルサイズ** | 約 75 MB |
 | **ダウンロード** | [⬇️ 最新APKをダウンロード (Releases)](https://github.com/yoshi7930/booth-messenger-release/releases/latest) |
 
 > [!TIP]
-> 直接ダウンロードリンク:  
-> [booth-messenger-release-v138-com.booth.messenger.apk](https://github.com/yoshi7930/booth-messenger-release/releases/download/v138/booth-messenger-release-v138-com.booth.messenger.apk)
+> **直接ダウンロードリンク:**  
+> [booth-messenger-release-v140-com.booth.messenger.apk](https://github.com/yoshi7930/booth-messenger-release/releases/download/v140/booth-messenger-release-v140-com.booth.messenger.apk)
+
+---
+
+## 🔄 v1.000 (Build 140) アップデート内容
+
+- **画面レイアウト最適化**: 端末のナビゲーションバー（3ボタンナビゲーションおよびジェスチャー操作）と文字入力欄の被りを自動判別して最適化
+- **UI・視認性向上**: 画像・ファイル送信確認ダイアログ等の背景デザインを統一し、テキストやボタンの視認性を大幅に向上
+- **アカウント削除連携**: Google Play ポリシー準拠のアカウント削除申請専用Webページ提供およびアプリ内連携に対応
+- **操作性向上**: メッセージ送信後に入力欄クリアと連動して最下部（最新メッセージ）へ確実にスクロール追従するよう改善
+- **スタンプ機能強化**: スタンプサジェストのキーワード完全一致化、およびサジェスト送信時限定の入力文字クリアに対応
+- **超高速ゼロDB着信**: 着信処理の完全ゼロDB化により、通話着信が0ミリ秒で即座にポップアップ起動するよう改善
+- **送受信ラグ解消**: 事前認証ウォームアップおよび通知処理の最適化により、メッセージ送受信時のタイムラグを解消
+- **利便性向上**: トークルームでのファイル添付・閲覧時や招待共有時に暗証番号（PIN）ロックをスキップするよう改善
+- **安全性と安定性の向上**: アプリ全体の堅牢性と接続安定性を総合的に強化
 
 ---
 
@@ -29,7 +44,7 @@ Booth Messenger の公式アプリ配布リポジトリです。最新版の And
 Google Play ストアを経由せずに APK を直接インストールする場合、端末のセキュリティ設定で「提供元不明のアプリのインストール」を許可する必要があります。
 
 ### 手順
-1. 上記のリンクから APK ファイル（`booth-messenger-release-v138-com.booth.messenger.apk`）をダウンロードします。
+1. 上記のリンクから APK ファイル（`booth-messenger-release-v140-com.booth.messenger.apk`）をダウンロードします。
 2. ダウンロード完了後、通知バーまたは「ファイル（ダウンロードフォルダ）」アプリから該当の APK をタップします。
 3. **「セキュリティ上の理由から、お使いのスマートフォンではこの提供元からの不明なアプリをインストールすることはできません」** と表示された場合：
    - 「設定」をタップします。

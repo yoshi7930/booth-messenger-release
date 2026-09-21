@@ -12,20 +12,28 @@ git add .
 git status
 
 # 3. コミットメッセージ入力
-$commitMsg = Read-Host "コミットメッセージを入力してください (Enterでデフォルト: 'Update release page')"
+$commitMsg = Read-Host "コミットメッセージを入力してください (Enterでデフォルト 'Release v1.000 (Build 140)')"
 if ([string]::IsNullOrWhiteSpace($commitMsg)) {
-    $commitMsg = "Update release page"
+    $commitMsg = "Release v1.000 (Build 140)"
 }
 
 git commit -m "$commitMsg"
 
-# 4. リモートへプッシュ
+# 4. タグ作成確認
+$createTag = Read-Host "タグ v140 を作成してプッシュしますか？ (Y/n)"
+if ($createTag -ne "n" -and $createTag -ne "N") {
+    git tag -a "v140" -m "Booth Messenger v1.000 (Build 140)" -f
+    Write-Host "タグ v140 を作成しました。" -ForegroundColor Green
+}
+
+# 5. リモートへプッシュ
 Write-Host "`nGitHubへプッシュしています..." -ForegroundColor Yellow
 git push -u origin main
+git push origin --tags
 
 if ($LASTEXITCODE -eq 0) {
     Write-Host "`n✅ GitHubへのプッシュが完了しました！" -ForegroundColor Green
     Write-Host "GitHub Releases URL: https://github.com/yoshi7930/booth-messenger-release/releases" -ForegroundColor Cyan
 } else {
-    Write-Host "`n⚠️ プッシュに失敗しました。GitHub上に 'booth-messenger-release' リポジトリが作成されているか確認してください。" -ForegroundColor Red
+    Write-Host "`n⚠️ プッシュに失敗しました。認証またはネットワークを確認してください。" -ForegroundColor Red
 }

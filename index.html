@@ -145,6 +145,38 @@
       margin-top: 10px;
     }
 
+    .section-title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .changelog-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .changelog-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      line-height: 1.5;
+      color: #cbd5e1;
+    }
+
+    .changelog-item i {
+      color: #10b981;
+      font-size: 14px;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
     .feature-list {
       list-style: none;
       display: flex;
@@ -182,15 +214,6 @@
       font-size: 13px;
       color: var(--text-muted);
       line-height: 1.4;
-    }
-
-    .instructions-title {
-      font-size: 16px;
-      font-weight: 700;
-      margin-bottom: 14px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
     }
 
     .steps {
@@ -251,12 +274,12 @@
           <span class="badge"><i class="fa-brands fa-android"></i> Android版</span>
         </div>
         <div style="text-align: right;">
-          <div style="font-weight: 700; font-size: 14px;">v0.9244 (Build 138)</div>
+          <div style="font-weight: 700; font-size: 14px;">v1.000 (Build 140)</div>
           <div class="package-name">com.booth.messenger</div>
         </div>
       </div>
 
-      <a href="https://github.com/yoshi7930/booth-messenger-release/releases/download/v138/booth-messenger-release-v138-com.booth.messenger.apk" class="download-btn">
+      <a href="https://github.com/yoshi7930/booth-messenger-release/releases/download/v140/booth-messenger-release-v140-com.booth.messenger.apk" class="download-btn">
         <i class="fa-solid fa-cloud-arrow-down"></i>
         <span>最新APKをダウンロード</span>
       </a>
@@ -264,7 +287,41 @@
     </div>
 
     <div class="card">
-      <h2 class="instructions-title"><i class="fa-solid fa-circle-info" style="color: #6366f1;"></i> インストール手順</h2>
+      <h2 class="section-title"><i class="fa-solid fa-sparkles" style="color: #f59e0b;"></i> 最新アップデート内容 (v1.000)</h2>
+      <ul class="changelog-list">
+        <li class="changelog-item">
+          <i class="fa-solid fa-circle-check"></i>
+          <div><strong>画面レイアウト最適化:</strong> 端末のナビゲーションバー（3ボタン/ジェスチャー）と文字入力欄の被りを自動判別して最適化</div>
+        </li>
+        <li class="changelog-item">
+          <i class="fa-solid fa-circle-check"></i>
+          <div><strong>UI・視認性向上:</strong> 送信確認ダイアログ等の背景を統一し、テキストやボタンの視認性を向上</div>
+        </li>
+        <li class="changelog-item">
+          <i class="fa-solid fa-circle-check"></i>
+          <div><strong>アカウント削除連携:</strong> Google Playポリシー準拠の申請専用Webページ提供およびアプリ内連携に対応</div>
+        </li>
+        <li class="changelog-item">
+          <i class="fa-solid fa-circle-check"></i>
+          <div><strong>操作性改善:</strong> メッセージ送信後に入力欄クリアと連動して最下部へ自動スクロール</div>
+        </li>
+        <li class="changelog-item">
+          <i class="fa-solid fa-circle-check"></i>
+          <div><strong>高速ゼロDB着信:</strong> 着信処理の完全ゼロDB化により、通話着信が0ミリ秒で即座にポップアップ起動</div>
+        </li>
+        <li class="changelog-item">
+          <i class="fa-solid fa-circle-check"></i>
+          <div><strong>送受信ラグ解消:</strong> 事前認証ウォームアップおよび通知処理の最適化でメッセージ遅延を解消</div>
+        </li>
+        <li class="changelog-item">
+          <i class="fa-solid fa-circle-check"></i>
+          <div><strong>利便性向上:</strong> トークルームでのファイル添付・閲覧時等の暗証番号（PIN）ロックをスキップ</div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2 class="section-title"><i class="fa-solid fa-circle-info" style="color: #6366f1;"></i> インストール手順</h2>
       <div class="steps">
         <div class="step-item">上の「最新APKをダウンロード」をタップしてファイルをダウンロードします。</div>
         <div class="step-item">ダウンロード完了後、通知または「ファイル」アプリから APK を開きます。</div>
